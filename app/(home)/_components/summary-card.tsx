@@ -16,18 +16,22 @@ const SummaryCard = ({
   size = "small",
 }: SummaryCardProps) => {
   return (
-    <Card>
+    <Card className={`${size === "large" ? "bg-white bg-opacity-5" : ""}`}>
       <CardHeader className="flex-row items-center gap-4">
         {icon}
         <p
-          className={`${size === "small" ? "text-muted-foreground" : "text-white opacity-70"}`}
+          className={`${
+            size === "small" ? "text-muted-foreground" : "text-white opacity-70"
+          } md:text-xl`}
         >
           {title}
         </p>
       </CardHeader>
       <CardContent className="flex justify-between">
         <p
-          className={`font-bold ${size === "small" ? "text-2xl" : "text-4xl"}`}
+          className={`font-bold ${
+            size === "small" ? "text-2xl" : "text-4xl"
+          } text-lg md:text-2xl lg:text-3xl`}
         >
           {Intl.NumberFormat("pt-BR", {
             style: "currency",
